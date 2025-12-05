@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies (frontend)
         working-directory: ./frontend
-        run: npm ci
+        run: npm install --no-audit --no-fund
 
       - name: Seed frontend data (if present)
         working-directory: ./frontend
