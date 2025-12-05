@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Pre-push hook: assicura che il ramo remoto sia aggiornato prima del push
+# Esegue fetch + pull --rebase --autostash sul ramo corrente; se fallisce, blocca il push.
+
+set -euo pipefail
+
+echo "[pre-push] Verifico aggiornamenti remoti e applico rebase se necessario..."
+
+# determina il ramo corrente
+branch=$(git rev-parse --abbrev-ref HEAD)
+remote="origin"
+
+echo "[pre-push] Branch corrente: $branch"
+
+echo "[pre-push] Eseguo fetch da $remote..."
+git fetch --prune "$remote"
+
+echo "[pre-push] Eseguo pull --rebase --autostash $remote/$branch"
+if ! git pull --rebase --autostash "$remote" "$branch"; then
+  echo "[pre-push] ERRORE: pull --rebase fallito. Risolvi i conflitti localmente e riprova."
+  exit 1
+fi
+
+echo "[pre-push] Rebase completato con successo. Procedo con il push..."
+
+exit 0

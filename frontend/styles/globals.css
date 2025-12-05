@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: #ffffff;
+  color: #111213;
+}
+
+.brand-hero {
+  background: linear-gradient(90deg, rgba(212,160,23,0.08), rgba(212,160,23,0.02));
+}
+
+/* Accessibility & touch targets */
+a, button { -webkit-tap-highlight-color: rgba(0,0,0,0); }
+button, a.button-like { min-height: 44px; min-width: 44px; }
+
+/* Focus-visible for keyboard users */
+*:focus { outline: none; }
+*:focus-visible { outline: 3px solid rgba(212,160,23,0.9); outline-offset: 2px; }
+
+/* Ensure clickable cards fill hit target */
+.clickable { display: block; width: 100%; }
+
+/* Smooth animations for progress bars */
+.transition-all { transition: all 420ms cubic-bezier(.2,.8,.2,1); }
+
+/* Image placeholders */
+.object-cover { object-fit: cover; }
+
