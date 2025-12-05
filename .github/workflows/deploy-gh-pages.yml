@@ -1,0 +1,46 @@
+name: Build and Deploy Frontend to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies (frontend)
+        working-directory: ./frontend
+        run: npm ci
+
+      - name: Seed frontend data (if present)
+        working-directory: ./frontend
+        run: |
+          if [ -f ../data/vehicles.json ]; then
+            node scripts/seed_data.js || true
+          fi
+
+      - name: Generate sitemap
+        working-directory: ./frontend
+        run: npm run sitemap || true
+
+      - name: Build and export static site
+        working-directory: ./frontend
+        env:
+          BASE_PATH: '/Codecar-'
+        run: npm run export
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./frontend/out
+          publish_branch: gh-pages
