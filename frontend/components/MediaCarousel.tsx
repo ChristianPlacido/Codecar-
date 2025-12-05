@@ -32,6 +32,8 @@ function toYouTubeEmbed(src: string, start?: number, end?: number) {
       controls: '0',
       modestbranding: '1',
       rel: '0',
+      showinfo: '0',
+      fs: '0',
       playsinline: '1',
       enablejsapi: '0',
       iv_load_policy: '3'
@@ -47,6 +49,7 @@ function toYouTubeEmbed(src: string, start?: number, end?: number) {
 const MediaCarousel: React.FC<{ items: MediaItem[]; interval?: number }> = ({ items, interval = 6000 }) => {
   const [index, setIndex] = useState(0)
   const timerRef = useRef<number | null>(null)
+  const clipRef = useRef<number | null>(null)
 
   // Prefer clips if present: reorder so clips come first (keeps original order otherwise)
   const ordered = React.useMemo(() => {
@@ -56,42 +59,31 @@ const MediaCarousel: React.FC<{ items: MediaItem[]; interval?: number }> = ({ it
   }, [items])
 
   useEffect(() => {
-    start()
-    return stop
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [index, ordered])
+    const current = ordered[index]
 
-  const start = () => {
-    stop()
+    if (timerRef.current) window.clearTimeout(timerRef.current)
+    if (clipRef.current) window.clearTimeout(clipRef.current)
     timerRef.current = window.setTimeout(() => {
       setIndex((i) => (i + 1) % ordered.length)
     }, interval)
-  }
 
-  const stop = () => {
-    if (timerRef.current) window.clearTimeout(timerRef.current)
-    timerRef.current = null
-  }
+    // handle precise clip advance when start/end provided
+    if (current?.type === 'clip' && current.start !== undefined && current.end !== undefined) {
+      const duration = Math.max((current.end - current.start) * 1000, 1000)
+      clipRef.current = window.setTimeout(() => {
+        setIndex((i) => (i + 1) % ordered.length)
+      }, duration)
+    }
+
+    return () => {
+      if (timerRef.current) window.clearTimeout(timerRef.current)
+      if (clipRef.current) window.clearTimeout(clipRef.current)
+    }
+  }, [index, ordered, interval])
 
   if (!ordered || ordered.length === 0) return null
 
   const current = ordered[index]
-
-  // For autoplay snippets we manage timers: HTML5 video gives precise events, YouTube uses embed start/end and a fallback timer
-  const videoRef = useRef<HTMLVideoElement | null>(null)
-  const ytTimerRef = useRef<number | null>(null)
-
-  useEffect(() => {
-    // cleanup timers on unmount
-    return () => {
-      if (ytTimerRef.current) window.clearTimeout(ytTimerRef.current)
-    }
-  }, [])
-
-  const logEvent = (name: string, payload: any = {}) => {
-    // analytics stub: replace with GA/Plausible/event endpoint integration
-    try { console.log('[analytics]', name, payload) } catch (e) {}
-  }
 
   const renderMedia = (it: MediaItem) => {
     if (it.type === 'image') {
@@ -101,22 +93,6 @@ const MediaCarousel: React.FC<{ items: MediaItem[]; interval?: number }> = ({ it
     const isYouTube = /youtu(?:\.be|be\.com)/i.test(it.src)
     if (isYouTube) {
       const embed = toYouTubeEmbed(it.src, it.start, it.end)
-      // schedule advance based on start/end when clip provided
-      useEffect(() => {
-        if (it.start !== undefined && it.end !== undefined) {
-          const dur = (it.end - it.start) * 1000
-          if (ytTimerRef.current) window.clearTimeout(ytTimerRef.current)
-          ytTimerRef.current = window.setTimeout(() => {
-            // advance
-            setIndex((i) => (i + 1) % ordered.length)
-            logEvent('clip_end', { title: it.title })
-          }, dur)
-          logEvent('clip_start', { title: it.title, duration: dur })
-        }
-        return () => { if (ytTimerRef.current) window.clearTimeout(ytTimerRef.current) }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [index])
-
       return (
         <iframe
           title={it.title}
@@ -135,51 +111,48 @@ const MediaCarousel: React.FC<{ items: MediaItem[]; interval?: number }> = ({ it
       const end = it.end || undefined
       return (
         <video
-          ref={videoRef}
           className="w-full h-full object-cover"
           src={it.src + (it.start || it.start === 0 ? `#t=${start}` : '')}
           playsInline
           muted
           autoPlay
-          onPlay={() => logEvent('video_play', { title: it.title })}
-          onEnded={() => { logEvent('video_end', { title: it.title }); setIndex((i) => (i + 1) % ordered.length) }}
-          onLoadedMetadata={(e) => {
-            const v = e.currentTarget as HTMLVideoElement
-            if (start) v.currentTime = start
-            if (end) {
-              // ensure we stop at end
-              const handler = () => {
-                if (v.currentTime >= (end as number)) {
-                  v.pause()
-                  v.removeEventListener('timeupdate', handler)
-                  setIndex((i) => (i + 1) % ordered.length)
-                  logEvent('video_clip_end', { title: it.title })
-                }
-              }
-              v.addEventListener('timeupdate', handler)
-            }
-          }}
+          loop={!end}
+          controls={false}
         />
       )
     }
 
     // fallback iframe for other providers
-    return <iframe title={it.title} src={it.src} className="w-full h-full" frameBorder={0} allow="autoplay; encrypted-media" allowFullScreen />
+    return (
+      <iframe
+        title={it.title}
+        src={it.src}
+        className="w-full h-full"
+        frameBorder={0}
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+      />
+    )
   }
 
   return (
     <div className="w-full">
       <div className="relative w-full overflow-hidden rounded">
-        <div className="w-full bg-black flex items-center justify-center" style={{height: 420}}>
+        <div className="w-full bg-black flex items-center justify-center aspect-[16/9] sm:aspect-[18/9] md:h-[420px]">
           {renderMedia(current)}
         </div>
       </div>
 
-      <div className="mt-3 flex items-center justify-between">
-        <div className="text-sm font-semibold">{current.title}</div>
-        <div className="flex items-center gap-2">
+      <div className="mt-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <div className="text-sm font-semibold leading-snug">{current.title}</div>
+        <div className="flex items-center gap-2" aria-label="Indicatori carosello">
           {ordered.map((it, i) => (
-            <button key={i} aria-label={`Vai a ${it.title}`} onClick={() => setIndex(i)} className={`w-3 h-3 rounded-full ${i === index ? 'bg-codecar-ocra' : 'bg-gray-300'}`} />
+            <button
+              key={i}
+              aria-label={`Vai a ${it.title}`}
+              onClick={() => setIndex(i)}
+              className={`w-3 h-3 rounded-full transition-all ${i === index ? 'bg-codecar-ocra scale-110' : 'bg-gray-300'}`}
+            />
           ))}
         </div>
       </div>

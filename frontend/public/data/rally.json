@@ -1,18 +1,41 @@
 {
   "driver": "Lorenzo Codecà",
-  "intro": "Pluricampione cross-country rally. Passione, tecnica e risultati raccontati gara dopo gara.",
+  "intro": "Dodici titoli italiani Cross Country Rally, sviluppo vetture ufficiali e una filosofia di guida precisa e moderna. Codecar nasce dalla sua esperienza per offrire preparazioni e vetture selezionate.",
   "highlights": [
-    { "id": "h1", "title": "Campionato Italiano Cross-Country 2022", "percent": 95, "description": "Vittoria assoluta nel campionato italiano con 7 prove vinte.", "images": ["/placeholder-car.jpg"], "videos": ["https://www.youtube.com/embed/dQw4w9WgXcQ"] },
-    { "id": "h2", "title": "Rally Raid Sardegna 2023", "percent": 88, "description": "Podio alla Sardegna Rally Raid, prestazioni costanti su tracciati tecnici.", "images": ["/placeholder-car.jpg"], "videos": ["https://www.youtube.com/embed/dQw4w9WgXcQ"] },
-    { "id": "h3", "title": "Internazionale Cross-Country 2021", "percent": 80, "description": "Esperienza internazionale e sviluppo vettura per terreni estremi.", "images": ["/placeholder-car.jpg"], "videos": ["https://www.youtube.com/embed/dQw4w9WgXcQ"] }
+    {
+      "id": "h1",
+      "title": "12 volte Campione Italiano",
+      "percent": 98,
+      "description": "Successi consecutivi nei campionati Cross Country e Baja, riferimento assoluto per il fuoristrada.",
+      "images": ["/media/rally-podium.svg"],
+      "videos": ["https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4"]
+    },
+    {
+      "id": "h2",
+      "title": "Sviluppo vetture ufficiali",
+      "percent": 92,
+      "description": "Collabora con team ufficiali per set-up sospensioni, navigazione e affidabilità su lunghe distanze.",
+      "images": ["/media/rally-night.svg"],
+      "videos": ["https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4"]
+    },
+    {
+      "id": "h3",
+      "title": "Trainer & Ambassador",
+      "percent": 90,
+      "description": "Coaching per piloti emergenti, logistica e pianificazione gara condivisi con la squadra Codecar.",
+      "images": ["/media/rally-team.svg"],
+      "videos": ["https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4"]
+    }
   ],
   "media": [
-    { "type": "clip", "title": "Intervista a Lorenzo Codecà (spezzone)", "src": "https://www.youtube.com/watch?v=dQw4w9WgXcQ", "start": 30, "end": 90 },
-    { "type": "clip", "title": "Passaggi Salienti Gara 2023 (spezzone)", "src": "https://youtu.be/dQw4w9WgXcQ", "start": 10, "end": 45 }
+    { "type": "clip", "title": "Cross Country Rally - Onboard", "src": "https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4", "start": 5, "end": 25 },
+    { "type": "clip", "title": "Intervista Codecà post gara", "src": "https://www.youtube.com/watch?v=5NV6Rdv1a3I", "start": 12, "end": 42 },
+    { "type": "video", "title": "Highlights stagione", "src": "https://storage.googleapis.com/coverr-main/mp4/Night_City.mp4" }
   ],
   "timeline": [
-    { "date": "2021-05-10", "event": "Prima vittoria regionale", "blurb": "Conquista la prima vittoria in categoria affermandosi come talento emergente." },
-    { "date": "2022-09-18", "event": "Campionato Italiano - Titolo", "blurb": "Titolo nazionale con vittorie su più prove." },
-    { "date": "2023-06-30", "event": "Rally Sardegna - Podio", "blurb": "Prestazione solida su terreno tecnico e competitivo." }
+    { "date": "2004", "event": "Primo titolo italiano", "blurb": "Il debutto vincente nel Campionato Italiano Cross Country Rally." },
+    { "date": "2012", "event": "Rally dei Faraoni", "blurb": "Top 5 assoluta e miglior equipaggio italiano nella marathon africana." },
+    { "date": "2017", "event": "Baja d'Italia", "blurb": "Vittoria con oltre 5 minuti di vantaggio e record sul tratto cronometrato." },
+    { "date": "2023", "event": "Sviluppo T1+", "blurb": "Programma di test con nuove specifiche FIA T1+ e coaching ai giovani piloti." }
   ]
 }

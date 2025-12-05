@@ -1,0 +1,82 @@
+[
+  {
+    "id": "jeep-wrangler-rubicon-2020",
+    "title": "Jeep Wrangler Rubicon 2.0T 4WD",
+    "price": "€55.900",
+    "year": "2020",
+    "mileage": "32.000 km",
+    "fuel": "Benzina",
+    "gearbox": "Automatico",
+    "power": "272 CV",
+    "traction": "4x4 ridotte",
+    "body": "SUV",
+    "seats": 5,
+    "highlight": "Assetto Codecar dedicato per il fuoristrada e kit luci LED omologato.",
+    "images": [
+      "https://images.unsplash.com/photo-1502877828070-33b167ad6860?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "ctaLink": "https://www.autoscout24.it/offerta/jeep-wrangler-rubicon-benzina-giallo-xxxxx",
+    "tags": ["Cross country", "Allestimento premium", "Garanzia ufficiale"]
+  },
+  {
+    "id": "audi-q5-45-tfsi-2021",
+    "title": "Audi Q5 45 TFSI quattro S tronic",
+    "price": "€48.300",
+    "year": "2021",
+    "mileage": "28.400 km",
+    "fuel": "Benzina/Ibrido leggero",
+    "gearbox": "Automatico 7 rapporti",
+    "power": "265 CV",
+    "traction": "quattro",
+    "body": "SUV",
+    "seats": 5,
+    "highlight": "Pacchetto S line, fari Matrix LED, manutenzione certificata Audi.",
+    "images": [
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1600&q=80"
+    ],
+    "ctaLink": "https://www.autoscout24.it/offerta/audi-q5-45-tfsi-quattro-xxxxx",
+    "tags": ["Service incluso", "Interni pelle", "ADAS completo"]
+  },
+  {
+    "id": "toyota-yaris-cross-2023",
+    "title": "Toyota Yaris Cross 1.5 Hybrid Premiere",
+    "price": "€31.900",
+    "year": "2023",
+    "mileage": "12.100 km",
+    "fuel": "Ibrido",
+    "gearbox": "Automatico e-CVT",
+    "power": "116 CV",
+    "traction": "AWD-i",
+    "body": "Crossover",
+    "seats": 5,
+    "highlight": "Allestimento Premiere con tetto panoramico e Toyota Safety Sense.",
+    "images": [
+      "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "ctaLink": "https://www.autoscout24.it/offerta/toyota-yaris-cross-ibrida-xxxxx",
+    "tags": ["Ibrida", "Pronta consegna", "Tetto panoramico"]
+  },
+  {
+    "id": "volkswagen-tiguan-rline-2022",
+    "title": "Volkswagen Tiguan 2.0 TDI R-Line",
+    "price": "€42.700",
+    "year": "2022",
+    "mileage": "22.800 km",
+    "fuel": "Diesel",
+    "gearbox": "DSG 7 rapporti",
+    "power": "200 CV",
+    "traction": "4Motion",
+    "body": "SUV",
+    "seats": 5,
+    "highlight": "R-Line con cerchi da 20\" Misano e pacchetto Travel Assist.",
+    "images": [
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80"
+    ],
+    "ctaLink": "https://www.autoscout24.it/offerta/volkswagen-tiguan-r-line-xxxxx",
+    "tags": ["ADAS", "Cerchi 20\"", "Service Volkswagen"]
+  }
+]

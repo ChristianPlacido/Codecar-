@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" fill="none">
+  <rect width="360" height="120" rx="18" fill="#0d0d0e"/>
+  <path d="M24 60C24 36.3858 43.3858 17 67 17H138C159.539 17 177 34.461 177 56V64C177 87.6142 157.614 107 134 107H63C41.4609 107 24 89.5391 24 68V60Z" fill="#d4a017"/>
+  <text x="54" y="74" font-family="'Poppins', 'Helvetica', sans-serif" font-size="34" font-weight="700" fill="#0d0d0e">CODECAR</text>
+  <text x="188" y="64" font-family="'Poppins', 'Helvetica', sans-serif" font-size="18" fill="#d4a017">Seregno</text>
+  <rect x="188" y="70" width="150" height="2" fill="#d4a017"/>
+</svg>
