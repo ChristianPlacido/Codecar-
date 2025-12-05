@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600" fill="none">
+  <rect width="900" height="600" fill="#0c0c0d"/>
+  <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#d4a017" stop-opacity="0.35"/>
+    <stop offset="100%" stop-color="#d4a017" stop-opacity="0.02"/>
+  </linearGradient>
+  <rect x="0" y="0" width="900" height="600" fill="url(#g)"/>
+  <path d="M80 380 C220 300 360 360 520 320 C660 280 780 320 840 300" stroke="#d4a017" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <circle cx="190" cy="310" r="12" fill="#d4a017"/>
+  <circle cx="360" cy="340" r="12" fill="#d4a017"/>
+  <circle cx="560" cy="300" r="12" fill="#d4a017"/>
+  <circle cx="760" cy="310" r="12" fill="#d4a017"/>
+  <text x="70" y="120" font-size="34" font-family="'Poppins', 'Helvetica', sans-serif" fill="#d4a017">Test notturno vettura ufficiale</text>
+  <text x="70" y="160" font-size="20" font-family="'Poppins', 'Helvetica', sans-serif" fill="#f5f5f5">Telemetria sospensioni, luci supplementari e navigazione.</text>
+</svg>
