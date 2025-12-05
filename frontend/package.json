@@ -13,7 +13,7 @@
     "prepare": "echo 'Run npm run seed && npm run sitemap after scraping'"
   },
   "dependencies": {
-    "next": "14.3.1",
+    "next": "^14.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
@@ -22,7 +22,6 @@
     "postcss": "8.4.24",
     "tailwindcss": "3.4.7",
     "eslint": "8.43.0",
-    "eslint-config-next": "14.3.1",
     "node-fetch": "3.4.1"
   }
 }
