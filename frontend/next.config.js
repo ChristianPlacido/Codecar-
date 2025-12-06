@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 
-const basePath = process.env.BASE_PATH || ''
+const isProd = process.env.NODE_ENV === 'production'
+// Use repo name as basePath on GitHub Pages so assets resolve correctly.
+const basePath = process.env.BASE_PATH || (isProd ? '/Codecar-' : '')
 
 const nextConfig = {
   reactStrictMode: true,
