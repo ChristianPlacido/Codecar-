@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://your-domain.example/</loc>
+    <lastmod>2025-12-05T16:10:43.451Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli</loc>
+    <lastmod>2025-12-05T16:10:43.451Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/rally</loc>
+    <lastmod>2025-12-05T16:10:43.451Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli/vehicle-1</loc>
+    <lastmod>2025-12-05T16:10:43.451Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli/vehicle-2</loc>
+    <lastmod>2025-12-05T16:10:43.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli/vehicle-3</loc>
+    <lastmod>2025-12-05T16:10:43.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli/vehicle-4</loc>
+    <lastmod>2025-12-05T16:10:43.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli/vehicle-5</loc>
+    <lastmod>2025-12-05T16:10:43.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli/vehicle-6</loc>
+    <lastmod>2025-12-05T16:10:43.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli/vehicle-7</loc>
+    <lastmod>2025-12-05T16:10:43.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli/vehicle-8</loc>
+    <lastmod>2025-12-05T16:10:43.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli/vehicle-9</loc>
+    <lastmod>2025-12-05T16:10:43.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli/vehicle-10</loc>
+    <lastmod>2025-12-05T16:10:43.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli/vehicle-11</loc>
+    <lastmod>2025-12-05T16:10:43.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli/vehicle-12</loc>
+    <lastmod>2025-12-05T16:10:43.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli/vehicle-13</loc>
+    <lastmod>2025-12-05T16:10:43.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli/vehicle-14</loc>
+    <lastmod>2025-12-05T16:10:43.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli/vehicle-15</loc>
+    <lastmod>2025-12-05T16:10:43.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli/vehicle-16</loc>
+    <lastmod>2025-12-05T16:10:43.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli/vehicle-17</loc>
+    <lastmod>2025-12-05T16:10:43.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.example/veicoli/vehicle-18</loc>
+    <lastmod>2025-12-05T16:10:43.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
